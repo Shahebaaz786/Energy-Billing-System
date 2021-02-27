@@ -1,0 +1,127 @@
+
+import java.awt.*;
+
+
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+
+import java.sql.*;
+
+@SuppressWarnings("serial")
+ public class LightBill3 extends JFrame implements ActionListener  
+{
+	private static final long serialVersionUID = 1L;
+	
+	JLabel lblTitle,lblBatch,lblClass,lblDept,lblName,lblTal,lblDist,lblState,lblContact,lblGender,lblBk;JPanel topPanel;
+	JTable table;
+	JScrollPane scrollPane;
+	@SuppressWarnings("rawtypes")
+	JComboBox jcbBatch,jcbClass,jcbDept,jcbState,jcbDist,jcbTaluca,jcbGender;
+	JTextField  txtFname,txtMname,txtLname,txtCity,txtContact,txtDist,txtTaluca;
+	JButton Homebtn,btnDis;
+	String data[][];
+        @SuppressWarnings({ "rawtypes", "unchecked" })
+	LightBill3()
+	{
+		setSize(1940,1080);
+		setTitle(" Energy Billing System Receipt ");
+		setLayout(null);
+		setResizable(true);
+		
+		lblTitle=new JLabel();
+		try
+		{
+			BufferedImage img = ImageIO.read(getClass().getResource("/download (2).jfif"));
+			lblTitle.setIcon(new ImageIcon(img));
+		  }
+		catch (Exception e) 
+		   {
+System.out.println(e);
+		  }
+
+		lblBk=new JLabel();
+		try
+		{
+			BufferedImage img = ImageIO.read(getClass().getResource("/images (5).jpg"));
+			lblBk.setIcon(new ImageIcon(img));
+		  }
+		catch (Exception e) 
+		   {
+System.out.println(e);
+		  }
+
+		
+		lblBk.setBounds(0,-50,1940,1080);
+		
+		
+		
+	
+		
+		
+		
+		Homebtn=new JButton();
+		try
+		{
+			BufferedImage img = ImageIO.read(getClass().getResource("/images (8)ioi.jpg"));
+		    Homebtn.setIcon(new ImageIcon(img));
+		  }
+		catch (IOException ex) 
+		   {
+		  }
+		
+		  
+		Homebtn.setBounds(1570,15,327,302);
+		add(Homebtn);
+		Homebtn.addActionListener(this);
+
+		
+		
+		lblTitle.setBounds(522,350,616,724);
+		add(lblTitle,JLabel.CENTER);
+		add(lblBk);
+		
+		
+		
+	}
+		   
+	
+	
+	@SuppressWarnings({ "static-access", "deprecation" })	
+	public void actionPerformed(ActionEvent ae)
+	{
+		
+		
+		if(ae.getSource()==Homebtn)
+		{
+		new LightBill2().setVisible(true);
+		dispose();
+		}
+		
+
+
+}
+
+		
+	
+
+	public static void main(String args[])
+	{
+		
+		
+		new LightBill3().setVisible(true);
+		
+		
+
+	}
+	
+	
+
+}

@@ -1,0 +1,48 @@
+import java.awt.*;
+import javax.swing.*;
+public class LightBill4 extends JFrame
+{
+private ImageIcon image1;
+private JLabel label1;
+private ImageIcon image2;
+private JLabel label2;
+ LightBill4()
+ {
+	 setLayout(new FlowLayout());
+	 image1 = new ImageIcon(getClass().getResource("/images (8)ioi.jpg"));
+	 label1 = new JLabel(image1);
+	 add(label1);
+	 image2 = new ImageIcon(getClass().getResource("/images (8)456yy.jpg"));
+	 label2 = new JLabel(image2);
+	 add(label2);
+	 
+ }
+ 
+ 
+ public static void main(String args[])
+ {
+	 LightBill4 lgtb  = new LightBill4();
+	 lgtb.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	 lgtb.setVisible(true);
+	 lgtb.pack();
+	 lgtb.setTitle("LightBill4");
+ }
+ 
+ 
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

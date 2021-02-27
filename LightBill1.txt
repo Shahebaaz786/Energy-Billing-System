@@ -1,0 +1,114 @@
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class LightBill1  extends JFrame	implements ActionListener 
+{
+	JLabel lblName,lblPass,tit;
+	JLabel  down1;
+	JTextField txtName;
+	JButton btnOk;
+	JPasswordField txtPass;
+LightBill1()
+{
+	
+	setSize(1940,1080);
+	setLayout(null);
+	setResizable(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	ImageIcon img = new ImageIcon("images (6).jpg");
+	down1 = new JLabel("",img,JLabel.CENTER);
+	down1.setBounds(0,0,1940,1080);
+	add(down1);  
+
+	tit=new JLabel("Welcome , Please Login Here");
+	lblName=new JLabel("UserName");
+	lblPass=new JLabel("Password");
+
+	txtName=new JTextField(10);
+	txtPass=new JPasswordField(10);
+	
+	tit.setBounds(647,110,700,80);
+	lblName.setBounds(700,300,200,50);
+	lblPass.setBounds(700,400,200,50);
+	txtName.setBounds(950,300,250,50);
+	txtPass.setBounds(950,400,250,50);
+
+	tit.setFont(new Font("Times New Roman",Font.BOLD,50));
+	lblName.setFont(new Font("Times New Roman",Font.BOLD,43));
+	lblPass.setFont(new Font("Times New Roman",Font.BOLD,43));
+	txtName.setFont(new Font("Times New Roman",Font.BOLD,43));
+	txtPass.setFont(new Font("Times New Roman",Font.BOLD,43));
+	lblName.setForeground(Color.RED);
+	lblPass.setForeground(Color.GREEN);
+	txtName.setForeground(Color.ORANGE);
+	tit.setForeground(Color.BLUE);
+	
+	
+
+	
+	add(tit);
+	add(lblName);
+	add(txtName); 
+	add(lblPass);
+	add(txtPass);
+	
+	
+	
+	btnOk=new JButton("LOGIN");
+	btnOk.setFont(new Font("Times New Roman",Font.BOLD,40));
+	btnOk.setBounds(840,500,200,50);
+	add(btnOk,btnOk.CENTER);
+	
+	btnOk.setForeground(Color.ORANGE);
+	btnOk.setBackground(Color.RED);
+	
+	setVisible(true);
+	btnOk.addActionListener(this);
+	
+}
+
+
+public void actionPerformed(ActionEvent ae)
+{
+	   if(txtName.getText().equals("Shahebaaj")&&txtPass.getText().equals("Inamdar"))
+   {
+new LightBill2().setVisible(true);
+dispose();
+   }
+
+}
+  
+
+
+public static void main(String[] args)
+	{
+		new LightBill1();
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+/*lblName.setBounds(200,20,200,50);
+txtName.setBounds(200,100,200,50);
+lblPass.setBounds(50,50,400,50);
+txtPass.setBounds(50,50,200,50);*/
+
+
+
+
+
+
+
+
+
+

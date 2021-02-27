@@ -1,0 +1,158 @@
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+
+class LightBill3  extends JFrame	implements ActionListener
+{
+	JLabel  meter,name,nunit,contact,email,meterid,total,sdate,edate,ounit,tit;
+	JButton btnNext,btnDisplay;
+LightBill3()
+{
+	//Header
+			JPanel heading;
+			heading = new JPanel();
+			heading.setBackground(new Color(0,0,0,80));
+			heading.setBounds(0,0,1940,100);
+			
+		
+		
+		//Frame
+	JLabel  down3;
+	setSize(1940,1080);
+	setTitle("Energy Billing System Registration Receipt");
+	setLayout(null);
+	setResizable(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	ImageIcon img = new ImageIcon("/images (5).jpg");
+	Image image = img.getImage();
+	Image temp_image = image.getScaledInstance(1940,1080,Image.SCALE_SMOOTH);
+	JLabel Background = new JLabel("",img,JLabel.CENTER);
+	down3 = new JLabel("",img,JLabel.CENTER);
+	down3.setBounds(0,0,1940,1080);
+	
+
+	meter=new JLabel();
+	try
+	{
+		BufferedImage img2 = ImageIO.read(getClass().getResource("/download (2).jpg"));
+		meter.setIcon(new ImageIcon(img2));
+	  }
+	catch (Exception e) 
+	   {
+System.out.println(e);
+	  }
+
+	
+	meter.setBounds(10,20,616,724);
+
+tit=new JLabel("Energy Bill  Receipt");
+	
+	name=new JLabel("Name");
+	contact=new JLabel("Mobile No");
+	email=new JLabel("Email-ID");
+	meterid=new JLabel("Meter-ID");
+	ounit=new JLabel("Old Unit");
+	nunit=new JLabel("New Unit");
+	sdate=new JLabel("Start Date");
+	edate=new JLabel("Last Date");
+	total=new JLabel("Total Cost");
+	
+	tit.setBounds(650,20,800,80);
+	name.setBounds(300,10,250,300);
+	contact.setBounds(300,110,250,400);
+	email.setBounds(300,210,250,500);
+	meterid.setBounds(300,310,250,600);
+	ounit.setBounds(300,410,250,700);
+	nunit.setBounds(950,140,200,50);
+	sdate.setBounds(950,290,200,50);
+	edate.setBounds(950,440,200,50);
+	total.setBounds(930,590,300,50);
+	
+	tit.setFont(new Font("Times New Roman",Font.BOLD,70));
+	name.setFont(new Font("Times New Roman",Font.BOLD,43));
+	contact.setFont(new Font("Times New Roman",Font.BOLD,43));
+	email.setFont(new Font("Times New Roman",Font.BOLD,43));
+	meterid.setFont(new Font("Times New Roman",Font.BOLD,43));
+	ounit.setFont(new Font("Times New Roman",Font.BOLD,43));
+	nunit.setFont(new Font("Times New Roman",Font.BOLD,43));
+	sdate.setFont(new Font("Times New Roman",Font.BOLD,43));
+	edate.setFont(new Font("Times New Roman",Font.BOLD,43));
+	total.setFont(new Font("Times New Roman",Font.BOLD,60));
+	
+	
+	btnNext=new JButton("NEXT");
+	btnNext.setFont(new Font("Times New Roman",Font.BOLD,40));
+	btnNext.setBounds(850,910,200,50);
+	
+	
+	name.setForeground(Color.BLUE);
+	contact.setForeground(Color.RED);
+	email.setForeground(Color.GREEN);
+	meterid.setForeground(Color.RED);
+	ounit.setForeground(Color.BLUE);
+	nunit.setForeground(Color.RED);
+	sdate.setForeground(Color.GREEN);
+	edate.setForeground(Color.BLUE);
+	total.setForeground(Color.RED);
+	
+	tit.setForeground(Color.PINK);
+	btnNext.setForeground(Color.RED);
+	btnNext.setBackground(Color.PINK);
+	
+	add(meter);
+	Background.add(heading);
+	add(tit);
+	add(name);
+	add(contact);
+	add(email);
+	add(meterid);
+	add(ounit);
+	add(nunit);
+	add(sdate);
+	add(edate);
+	add(total);
+	add(btnNext,btnNext.CENTER);
+	add(down3);  
+	
+	
+	setVisible(true);
+	
+	
+	btnNext.addActionListener(this);
+	btnDisplay.addActionListener(this);
+	
+}
+
+
+
+
+
+public void actionPerformed(ActionEvent ae)
+{
+  if(ae.getSource()==btnNext)
+   {
+new LightBill4().setVisible(true);
+dispose();
+   }
+  if(ae.getSource()==btnDisplay)
+	{
+
+	}
+  
+	
+
+  
+  
+}
+	public static void main(String[] args)
+	{
+		new LightBill3();
+
+	}
+
+}

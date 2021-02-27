@@ -1,0 +1,31 @@
+
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+class LightBill  extends JFrame 	
+{
+
+LightBill()
+{
+	JLabel  down;
+	setSize(1940,1080);
+	setLayout(null);
+	setResizable(true);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	ImageIcon img = new ImageIcon("/download1.jpg");
+	down = new JLabel("",img,JLabel.CENTER);
+	down.setBounds(0,0,1940,1080);
+	
+	add(down);  
+	setVisible(true);
+}
+
+	public static void main(String[] args)
+	{
+		new LightBill();
+
+	}
+
+}
